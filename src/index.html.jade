@@ -1,0 +1,163 @@
+doctype
+
+title Swiper Demo
+
+link(rel='stylesheet', href='lib/swiper/idangerous.swiper.css')
+link(rel='stylesheet', href='lib/swiper-scrollbar/idangerous.swiper.scrollbar.css')
+
+script(src='/socket.io/socket.io.js')
+script(src='reload-client.js')
+script(src='lib/jquery.min.js')
+script(src='lib/swiper/idangerous.swiper.js')
+script(src='lib/swiper-scrollbar/idangerous.swiper.scrollbar.js')
+
+style: :stylus
+  .swiper-container
+    width 800px
+    height 350px
+    border 1px solid red
+  .swiper-slide
+    height 600px
+    text-align center
+  .swiper-scrollbar
+    height 10px
+    margin 20px auto
+    width  800px
+    left: 0;
+    top : -30px;
+    z-index 20
+  .pagination
+    position: absolute
+    z-index: 200
+    left: 10px
+    bottom: 10px
+  .swiper-pagination-switch
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    margin-right: 5px;
+    opacity: 0.5;
+    border: 1px solid #fff;
+    cursor: pointer;
+    background: green;
+  .swiper-visible-switch
+    background: red;
+  .swiper-active-switch
+    background: blue;
+
+h2 Single Slide (Fixed Width)
+//- Height&width using container height&width, slide has no effect
+.swiper-container.single
+  .swiper-wrapper
+    .swiper-slide(style="width:250px; background:blue;")
+      h1 slide 1
+    .swiper-slide(style="width:300px; background:red;")
+      h1 slide 2
+    .swiper-slide(style="width:500px; background:green;")
+      h1 slide 3
+    .swiper-slide(style="width:350px; background:yellow;")
+      h1 slide 4
+script: :coffee
+  $ ->
+    $('.single').swiper
+      slidesPerView : 1
+
+h2 Single Slide (Variable Width)
+//- Height using container height
+.swiper-container.variable
+  .swiper-wrapper
+    .swiper-slide(style="width:250px; background:blue;")
+      h1 slide 1
+    .swiper-slide(style="width:300px; background:red;")
+      h1 slide 2
+    .swiper-slide(style="width:500px; background:green;")
+      h1 slide 3
+    .swiper-slide(style="width:350px; background:yellow;")
+      h1 slide 4
+script: :coffee
+  $ ->
+    $('.variable').swiper
+      slidesPerView : 'auto'
+      centeredSlides : true
+
+h2 Vertical Scroll
+//- Height auto-computed
+.swiper-container.vertical
+  .swiper-wrapper
+    .swiper-slide(style="width:250px; background:blue;")
+      h1 slide 1
+    .swiper-slide(style="width:300px; background:red;")
+      h1 slide 2
+    .swiper-slide(style="width:500px; background:green;")
+      h1 slide 3
+    .swiper-slide(style="width:350px; background:yellow;")
+      h1 slide 4
+script: :coffee
+  $ ->
+    $('.vertical').swiper
+      slidesPerView : 2
+      mode : 'vertical'
+
+h2 Events
+.swiper-container.click
+  .swiper-wrapper
+    #1.swiper-slide(style="width:250px; background:blue;")
+      h1 slide 1
+    #2.swiper-slide(style="width:300px; background:red;")
+      h1 slide 2
+    #3.swiper-slide(style="width:500px; background:green;")
+      h1 slide 3
+    #4.swiper-slide(style="width:350px; background:yellow;")
+      h1 slide 4
+script: :coffee
+  $ ->
+    $('.click').swiper
+      slidesPerView : 'auto'
+      onSlideClick : (s) ->
+        console.info 'Clicked Slide :', s.clickedSlideIndex
+        console.info 'ID :', s.clickedSlide.id
+      onFirstInit : (s) ->
+        console.info 'onFirstInit'
+      onTouchEnd : (s) ->
+        console.info 'onTouchEnd'
+
+h1 Scroll bar
+.swiper-container.scrollbar
+  .swiper-wrapper
+    .swiper-slide(style="width:250px; background:blue;")
+      h1 slide 1
+    .swiper-slide(style="width:300px; background:red;")
+      h1 slide 2
+    .swiper-slide(style="width:500px; background:green;")
+      h1 slide 3
+    .swiper-slide(style="width:350px; background:yellow;")
+      h1 slide 4
+.swiper-scrollbar
+script: :coffee
+  $ ->
+    $('.scrollbar').swiper
+      slidesPerView : 'auto'
+      scrollbar:
+        container: '.swiper-scrollbar'
+        hide: true
+        draggable: true
+
+h1 Dot Scroll bar
+.swiper-container.dot
+  .swiper-wrapper
+    .swiper-slide(style="width:250px; background:blue;")
+      h1 slide 1
+    .swiper-slide(style="width:300px; background:red;")
+      h1 slide 2
+    .swiper-slide(style="width:500px; background:green;")
+      h1 slide 3
+    .swiper-slide(style="width:350px; background:yellow;")
+      h1 slide 4
+  .pagination
+script: :coffee
+  $ ->
+    $('.dot').swiper
+      slidesPerView : 'auto'
+      pagination: '.pagination',
+      paginationClickable: true

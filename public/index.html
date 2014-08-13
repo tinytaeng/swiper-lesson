@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<title>Swiper Demo</title>
+<link rel="stylesheet" href="lib/swiper/idangerous.swiper.css">
+<link rel="stylesheet" href="lib/swiper-scrollbar/idangerous.swiper.scrollbar.css">
+<script src="/socket.io/socket.io.js"></script>
+<script src="reload-client.js"></script>
+<script src="lib/jquery.min.js"></script>
+<script src="lib/swiper/idangerous.swiper.js"></script>
+<script src="lib/swiper-scrollbar/idangerous.swiper.scrollbar.js"></script>
+<style>.swiper-container {
+  width: 800px;
+  height: 350px;
+  border: 1px solid #f00;
+}
+.swiper-slide {
+  height: 600px;
+  text-align: center;
+}
+.swiper-scrollbar {
+  height: 10px;
+  margin: 20px auto;
+  width: 800px;
+  left: 0;
+  top: -30px;
+  z-index: 20;
+}
+.pagination {
+  position: absolute;
+  z-index: 200;
+  left: 10px;
+  bottom: 10px;
+}
+.swiper-pagination-switch {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  margin-right: 5px;
+  opacity: 0.5;
+  border: 1px solid #fff;
+  cursor: pointer;
+  background: #008000;
+}
+.swiper-visible-switch {
+  background: #f00;
+}
+.swiper-active-switch {
+  background: #00f;
+}
+
+</style>
+<h2>Single Slide (Fixed Width)</h2>
+<div class="swiper-container single">
+  <div class="swiper-wrapper">
+    <div style="width:250px; background:blue;" class="swiper-slide">
+      <h1>slide 1</h1>
+    </div>
+    <div style="width:300px; background:red;" class="swiper-slide">
+      <h1>slide 2</h1>
+    </div>
+    <div style="width:500px; background:green;" class="swiper-slide">
+      <h1>slide 3</h1>
+    </div>
+    <div style="width:350px; background:yellow;" class="swiper-slide">
+      <h1>slide 4</h1>
+    </div>
+  </div>
+</div>
+<script>(function() {
+  $(function() {
+    return $('.single').swiper({
+      slidesPerView: 1
+    });
+  });
+
+}).call(this);
+
+</script>
+<h2>Single Slide (Variable Width)</h2>
+<div class="swiper-container variable">
+  <div class="swiper-wrapper">
+    <div style="width:250px; background:blue;" class="swiper-slide">
+      <h1>slide 1</h1>
+    </div>
+    <div style="width:300px; background:red;" class="swiper-slide">
+      <h1>slide 2</h1>
+    </div>
+    <div style="width:500px; background:green;" class="swiper-slide">
+      <h1>slide 3</h1>
+    </div>
+    <div style="width:350px; background:yellow;" class="swiper-slide">
+      <h1>slide 4</h1>
+    </div>
+  </div>
+</div>
+<script>(function() {
+  $(function() {
+    return $('.variable').swiper({
+      slidesPerView: 'auto',
+      centeredSlides: true
+    });
+  });
+
+}).call(this);
+
+</script>
+<h2>Vertical Scroll</h2>
+<div class="swiper-container vertical">
+  <div class="swiper-wrapper">
+    <div style="width:250px; background:blue;" class="swiper-slide">
+      <h1>slide 1</h1>
+    </div>
+    <div style="width:300px; background:red;" class="swiper-slide">
+      <h1>slide 2</h1>
+    </div>
+    <div style="width:500px; background:green;" class="swiper-slide">
+      <h1>slide 3</h1>
+    </div>
+    <div style="width:350px; background:yellow;" class="swiper-slide">
+      <h1>slide 4</h1>
+    </div>
+  </div>
+</div>
+<script>(function() {
+  $(function() {
+    return $('.vertical').swiper({
+      slidesPerView: 2,
+      mode: 'vertical'
+    });
+  });
+
+}).call(this);
+
+</script>
+<h2>Events</h2>
+<div class="swiper-container click">
+  <div class="swiper-wrapper">
+    <div id="1" style="width:250px; background:blue;" class="swiper-slide">
+      <h1>slide 1</h1>
+    </div>
+    <div id="2" style="width:300px; background:red;" class="swiper-slide">
+      <h1>slide 2</h1>
+    </div>
+    <div id="3" style="width:500px; background:green;" class="swiper-slide">
+      <h1>slide 3</h1>
+    </div>
+    <div id="4" style="width:350px; background:yellow;" class="swiper-slide">
+      <h1>slide 4</h1>
+    </div>
+  </div>
+</div>
+<script>(function() {
+  $(function() {
+    return $('.click').swiper({
+      slidesPerView: 'auto',
+      onSlideClick: function(s) {
+        console.info('Clicked Slide :', s.clickedSlideIndex);
+        return console.info('ID :', s.clickedSlide.id);
+      },
+      onFirstInit: function(s) {
+        return console.info('onFirstInit');
+      },
+      onTouchEnd: function(s) {
+        return console.info('onTouchEnd');
+      }
+    });
+  });
+
+}).call(this);
+
+</script>
+<h1>Scroll bar</h1>
+<div class="swiper-container scrollbar">
+  <div class="swiper-wrapper">
+    <div style="width:250px; background:blue;" class="swiper-slide">
+      <h1>slide 1</h1>
+    </div>
+    <div style="width:300px; background:red;" class="swiper-slide">
+      <h1>slide 2</h1>
+    </div>
+    <div style="width:500px; background:green;" class="swiper-slide">
+      <h1>slide 3</h1>
+    </div>
+    <div style="width:350px; background:yellow;" class="swiper-slide">
+      <h1>slide 4</h1>
+    </div>
+  </div>
+</div>
+<div class="swiper-scrollbar"></div>
+<script>(function() {
+  $(function() {
+    return $('.scrollbar').swiper({
+      slidesPerView: 'auto',
+      scrollbar: {
+        container: '.swiper-scrollbar',
+        hide: true,
+        draggable: true
+      }
+    });
+  });
+
+}).call(this);
+
+</script>
+<h1>Dot Scroll bar</h1>
+<div class="swiper-container dot">
+  <div class="swiper-wrapper">
+    <div style="width:250px; background:blue;" class="swiper-slide">
+      <h1>slide 1</h1>
+    </div>
+    <div style="width:300px; background:red;" class="swiper-slide">
+      <h1>slide 2</h1>
+    </div>
+    <div style="width:500px; background:green;" class="swiper-slide">
+      <h1>slide 3</h1>
+    </div>
+    <div style="width:350px; background:yellow;" class="swiper-slide">
+      <h1>slide 4</h1>
+    </div>
+  </div>
+  <div class="pagination"></div>
+</div>
+<script>(function() {
+  $(function() {
+    return $('.dot').swiper({
+      slidesPerView: 'auto',
+      pagination: '.pagination',
+      paginationClickable: true
+    });
+  });
+
+}).call(this);
+
+</script>

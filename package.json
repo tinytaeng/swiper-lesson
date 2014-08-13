@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "coffee-script": ">=1.6.3",
+    "stylus": ">=0.42.1"
+  }
+}

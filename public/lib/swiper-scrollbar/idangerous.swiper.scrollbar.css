@@ -1,0 +1,31 @@
+/*
+ * Swiper Scrollbar 2.4.0
+ * Plugin for Swiper 2.4+
+ *
+ * http://www.idangero.us/sliders/swiper/plugins/scrollbar.php
+ *
+ * Copyright 2010-2014, Vladimir Kharlampidi
+ * The iDangero.us
+ * http://www.idangero.us/
+ *
+ * Licensed under GPL & MIT
+ *
+ * Released on: January 28, 2014
+*/
+.swiper-scrollbar {
+	border-radius: 10px;
+	position: relative;
+	-ms-touch-action: none;
+	background: rgba(0,0,0,0.1)
+}
+.swiper-scrollbar-drag {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	background: rgba(0,0,0,0.5);
+	border-radius: 10px;
+}
+.swiper-scrollbar-cursor-drag {
+	cursor: move;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9wcmFwaGFuL0RldmVsb3BtZW50L2xhYi9zbGlkZXIvc3dpcGVyLmxlc3Nvbi9zcmMvbGliL3N3aXBlci1zY3JvbGxiYXIvaWRhbmdlcm91cy5zd2lwZXIuc2Nyb2xsYmFyLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7OztHQWFFO0FBQ0Y7Q0FDQyxxQkFBb0I7Q0FDcEIsb0JBQW1CO0NBQ25CLHdCQUF1QjtDQUN2Qiw0QkFBMkI7RUFDM0I7QUFDRDtDQUNDLGNBQWE7Q0FDYixhQUFZO0NBQ1osb0JBQW1CO0NBQ25CLDZCQUE0QjtDQUM1QixxQkFBb0I7RUFDcEI7QUFDRDtDQUNDLGNBQWE7RUFDYiIsImZpbGUiOiIvVXNlcnMvcHJhcGhhbi9EZXZlbG9wbWVudC9sYWIvc2xpZGVyL3N3aXBlci5sZXNzb24vcHVibGljL2xpYi9zd2lwZXItc2Nyb2xsYmFyL2lkYW5nZXJvdXMuc3dpcGVyLnNjcm9sbGJhci5jc3MiLCJzb3VyY2VSb290IjoiIiwic291cmNlc0NvbnRlbnQiOlsiLypcbiAqIFN3aXBlciBTY3JvbGxiYXIgMi40LjBcbiAqIFBsdWdpbiBmb3IgU3dpcGVyIDIuNCtcbiAqXG4gKiBodHRwOi8vd3d3LmlkYW5nZXJvLnVzL3NsaWRlcnMvc3dpcGVyL3BsdWdpbnMvc2Nyb2xsYmFyLnBocFxuICpcbiAqIENvcHlyaWdodCAyMDEwLTIwMTQsIFZsYWRpbWlyIEtoYXJsYW1waWRpXG4gKiBUaGUgaURhbmdlcm8udXNcbiAqIGh0dHA6Ly93d3cuaWRhbmdlcm8udXMvXG4gKlxuICogTGljZW5zZWQgdW5kZXIgR1BMICYgTUlUXG4gKlxuICogUmVsZWFzZWQgb246IEphbnVhcnkgMjgsIDIwMTRcbiovXG4uc3dpcGVyLXNjcm9sbGJhciB7XG5cdGJvcmRlci1yYWRpdXM6IDEwcHg7XG5cdHBvc2l0aW9uOiByZWxhdGl2ZTtcblx0LW1zLXRvdWNoLWFjdGlvbjogbm9uZTtcblx0YmFja2dyb3VuZDogcmdiYSgwLDAsMCwwLjEpXG59XG4uc3dpcGVyLXNjcm9sbGJhci1kcmFnIHtcblx0aGVpZ2h0OiAxMDAlO1xuXHR3aWR0aDogMTAwJTtcblx0cG9zaXRpb246IHJlbGF0aXZlO1xuXHRiYWNrZ3JvdW5kOiByZ2JhKDAsMCwwLDAuNSk7XG5cdGJvcmRlci1yYWRpdXM6IDEwcHg7XG59XG4uc3dpcGVyLXNjcm9sbGJhci1jdXJzb3ItZHJhZyB7XG5cdGN1cnNvcjogbW92ZTtcbn0iXX0= */

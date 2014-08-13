@@ -1,0 +1,11 @@
+[
+  "src/javascripts/vendor/bootstrap/bootstrap.js",
+  "src/javascripts/vendor/jquery/jquery.js",
+  "src/javascripts/vendor/swiper/idangerous.swiper.js",
+  "src/stylesheets/vendor/bootstrap/bootstrap.css",
+  "src/stylesheets/vendor/bootstrap/bootstrap.less",
+  "src/stylesheets/vendor/bootstrap/glyphicons-halflings-regular.eot",
+  "src/stylesheets/vendor/bootstrap/glyphicons-halflings-regular.svg",
+  "src/stylesheets/vendor/bootstrap/glyphicons-halflings-regular.ttf",
+  "src/stylesheets/vendor/bootstrap/glyphicons-halflings-regular.woff"
+]
